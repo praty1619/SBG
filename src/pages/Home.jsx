@@ -6,6 +6,7 @@ import Products from '../pages/Products';
 import FranchiseJourney from '../pages/FranchiseJourney';
 import WhyShyama from '../pages/WhyShyama';
 import Contact from '../pages/Contact';
+import BrandsMarquee from '../components/home/BrandsMarquee';
 
 export default function Home() {
     return (
@@ -14,6 +15,7 @@ export default function Home() {
             {/* Next sections plug in here */}
             <About/>
             <Products />
+            <BrandsMarquee />
             <FranchiseJourney />
             <WhyShyama />
             <Contact />

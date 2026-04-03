@@ -23,11 +23,11 @@ const features = [
 ];
 
 const testimonials = [
-  { name: 'Ravi Kumar',      loc: 'Visakhapatnam, AP', rating: 5, text: 'Joining Shyama was the best business decision of my life. My shop revenue doubled in 8 months. The support team is incredible.' },
-  { name: 'Priya Lakshmi',   loc: 'Nellore, AP',       rating: 5, text: 'As a first-time entrepreneur I was scared. Shyama\'s team held my hand throughout. The 24/7 support is real — they actually answer.' },
-  { name: 'Mohammed Farhan', loc: 'Guntur, AP',         rating: 5, text: 'The initial stock package was smartly chosen — every product sells well. Recovered my investment in just 5 months.' },
-  { name: 'Sunita Reddy',    loc: 'Kurnool, AP',        rating: 5, text: 'I run a small shop in a tier-3 town. Shyama gave me branded products and the confidence to grow. Now planning a second outlet.' },
-  { name: 'Arjun Singh',     loc: 'Hyderabad, TS',      rating: 5, text: 'The training program was thorough and practical. I was ready to handle customers professionally from day one.' },
+  { name: 'Amit Kumar', loc: 'Ranchi, Jharkhand', rating: 5, text: 'Joining Shyama was the best business decision of my life. My shop revenue doubled in 8 months. The support team is incredible.' },
+  { name: 'Neha Kumari', loc: 'Jamshedpur, Jharkhand', rating: 5, text: 'As a first-time entrepreneur I was scared. Shyama\'s team held my hand throughout. The 24/7 support is real — they actually answer.' },
+  { name: 'Mohammed Arif', loc: 'Dhanbad, Jharkhand', rating: 5, text: 'The initial stock package was smartly chosen — every product sells well. Recovered my investment in just 5 months.' },
+  { name: 'Pooja Singh', loc: 'Bokaro, Jharkhand', rating: 5, text: 'I run a small shop in a tier-3 town. Shyama gave me branded products and the confidence to grow. Now planning a second outlet.' },
+  { name: 'Rahul Verma', loc: 'Hazaribagh, Jharkhand', rating: 5, text: 'The training program was thorough and practical. I was ready to handle customers professionally from day one.' },
 ];
 
 const Stars = ({ n = 5 }) => (

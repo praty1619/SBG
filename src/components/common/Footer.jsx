@@ -77,7 +77,7 @@ export default function Footer() {
                             </div>
                             <div className="footer-contact-item">
                                 <span>📍</span>
-                                <span>Andhra Pradesh, India</span>
+                                <span>Jharkhand, India</span>
                             </div>
                         </div>
                         <a href="#contact" className="footer-cta-btn">

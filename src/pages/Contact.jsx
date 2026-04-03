@@ -66,7 +66,7 @@ export default function Contact() {
               <span className="contact-info-icon">📍</span>
               <div>
                 <p className="contact-info-label">Base</p>
-                <p className="contact-info-value">Andhra Pradesh, India</p>
+                <p className="contact-info-value">Jharkhand, India</p>
               </div>
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function Contact() {
                     name="city"
                     value={form.city}
                     onChange={handle}
-                    placeholder="e.g. Guntur, Vijayawada"
+                    placeholder="e.g. Jamshedpur, Jharkhand"
                   />
                 </div>
 
