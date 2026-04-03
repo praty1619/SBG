@@ -1,0 +1,275 @@
+/* ── Root ────────────────────────────────────────── */
+.products-root {
+    background: #080D1A;
+    padding: clamp(5rem, 9vw, 9rem) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.products-root::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(91, 141, 239, 0.3), transparent);
+}
+
+/* Reuse shared utils from About */
+.section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #E8841A;
+    background: rgba(232, 132, 26, 0.08);
+    border: 1px solid rgba(232, 132, 26, 0.2);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 1.25rem;
+}
+
+.section-tag::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #E8841A;
+    flex-shrink: 0;
+}
+
+.heading-accent {
+    color: #E8841A;
+    font-style: italic;
+}
+
+/* ── Header ──────────────────────────────────────── */
+.products-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.products-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    font-weight: 700;
+    color: #F0EBE1;
+    line-height: 1.15;
+    margin: 0 0 1rem;
+}
+
+.products-intro {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.92rem, 1.4vw, 1rem);
+    color: #8A9BBF;
+    line-height: 1.75;
+    max-width: 520px;
+    margin: 0;
+}
+
+/* ── Filter chips ────────────────────────────────── */
+.filter-chips {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.filter-chip {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    color: #8A9BBF;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    letter-spacing: 0.02em;
+}
+
+.filter-chip:hover {
+    background: rgba(255, 255, 255, 0.07);
+    color: #F0EBE1;
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.filter-chip--active {
+    background: #E8841A !important;
+    border-color: #E8841A !important;
+    color: #fff !important;
+    box-shadow: 0 4px 16px rgba(232, 132, 26, 0.4);
+}
+
+/* ── Grid ────────────────────────────────────────── */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* ── Product card ────────────────────────────────── */
+.product-card {
+    position: relative;
+    background: #0F1829;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 1.75rem 1.5rem;
+    cursor: default;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    border-color: rgba(232, 132, 26, 0.25);
+    box-shadow:
+        0 16px 48px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(232, 132, 26, 0.08);
+}
+
+/* Hover corner glow */
+.product-card-glow {
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232, 132, 26, 0.18) 0%, transparent 70%);
+    filter: blur(20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.product-card:hover .product-card-glow {
+    opacity: 1;
+}
+
+/* Tag badge */
+.product-tag-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #E8841A;
+    background: rgba(232, 132, 26, 0.12);
+    border: 1px solid rgba(232, 132, 26, 0.22);
+    padding: 3px 9px;
+    border-radius: 999px;
+}
+
+/* Icon */
+.product-icon-wrap {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-icon {
+    font-size: 2rem;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.25s ease;
+}
+
+.product-card:hover .product-icon {
+    transform: scale(1.15) rotate(-4deg);
+}
+
+.product-icon-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    background: rgba(232, 132, 26, 0.07);
+    border: 1px solid rgba(232, 132, 26, 0.12);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.product-card:hover .product-icon-glow {
+    background: rgba(232, 132, 26, 0.14);
+    border-color: rgba(232, 132, 26, 0.25);
+}
+
+/* Text */
+.product-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #F0EBE1;
+    margin: 0 0 0.5rem;
+    line-height: 1.3;
+}
+
+.product-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    color: #8A9BBF;
+    line-height: 1.65;
+    margin: 0 0 1.1rem;
+}
+
+/* Category pill */
+.product-cat {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8A9BBF;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 3px 10px;
+    border-radius: 999px;
+}
+
+/* ── Footnote ────────────────────────────────────── */
+.products-footnote {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    color: #8A9BBF;
+    text-align: center;
+    margin: 0;
+}
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
