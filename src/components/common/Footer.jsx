@@ -45,7 +45,7 @@ export default function Footer() {
                         </div>
                         <div className="footer-estd-badge">
                             <span>⭐</span>
-                            <span>Est. 2004 · Trusted for 20+ Years</span>
+                            <span>Est. 2004 · Trusted for 25+ Years</span>
                         </div>
                     </div>
 

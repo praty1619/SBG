@@ -136,7 +136,7 @@ export default function Products() {
                 >
                     <span className="section-tag">What We Supply</span>
                     <h2 className="prod-heading">
-                        30–40 Products,<br />
+                        40–50 Products,<br />
                         <em className="heading-accent">Ready from Day One</em>
                     </h2>
                     <p className="prod-intro">

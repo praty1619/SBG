@@ -4,14 +4,16 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import './BrandsMarquee.css';
 
 // ── Change this to your actual count of PNG files in /public ──
-const BRAND_COUNT = 16;
+const BRAND_COUNT = 22;
 
 const allBrands = Array.from({ length: BRAND_COUNT }, (_, i) => i + 1);
 
-// Split into 3 rows for depth effect
-const row1 = allBrands.slice(0, Math.ceil(BRAND_COUNT / 3));
-const row2 = allBrands.slice(Math.ceil(BRAND_COUNT / 3), Math.ceil(BRAND_COUNT * 2 / 3));
-const row3 = allBrands.slice(Math.ceil(BRAND_COUNT * 2 / 3));
+// Split into 4 rows for depth effect
+const chunkSize = Math.ceil(BRAND_COUNT / 4);
+const row1 = allBrands.slice(0, chunkSize);
+const row2 = allBrands.slice(chunkSize, chunkSize * 2);
+const row3 = allBrands.slice(chunkSize * 2, chunkSize * 3);
+const row4 = allBrands.slice(chunkSize * 3);
 
 // Pad short rows by repeating
 const pad = (arr, min = 6) => {
@@ -33,10 +35,10 @@ export default function BrandsMarquee() {
     const row1Y = useTransform(scrollYProgress, [0, 1], ['-40px', '40px']);
     const row2Y = useTransform(scrollYProgress, [0, 1], ['20px', '-20px']);
     const row3Y = useTransform(scrollYProgress, [0, 1], ['-30px', '30px']);
+    const row4Y = useTransform(scrollYProgress, [0, 1], ['25px', '-25px']);
 
     // Header parallax
     const headY = useTransform(scrollYProgress, [0, 1], ['20px', '-40px']);
-    const headOpac = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
     return (
         <Box ref={sectionRef} component="section" className="bm-root" id="brands">
@@ -100,6 +102,15 @@ export default function BrandsMarquee() {
                     </div>
                 </motion.div>
 
+                {/* Row 4 — scrolls RIGHT, slowest */}
+                <motion.div className="bm-row-parallax" style={{ y: row4Y }}>
+                    <div className="bm-track bm-track--right bm-track--medium">
+                        {[...pad(row4), ...pad(row4), ...pad(row4)].map((n, i) => (
+                            <BrandTile key={`r4-${i}`} n={n} size="md" />
+                        ))}
+                    </div>
+                </motion.div>
+
                 {/* Side fades */}
                 <div className="bm-fade bm-fade--left" />
                 <div className="bm-fade bm-fade--right" />
@@ -116,7 +127,7 @@ export default function BrandsMarquee() {
                 >
                     {[
                         { val: `${BRAND_COUNT}+`, label: 'Trusted Brands' },
-                        { val: '40+', label: 'SKUs Available' },
+                        { val: '50+', label: 'SKUs Available' },
                         { val: '100%', label: 'Genuine Products' },
                         { val: '₹0', label: 'Counterfeit Risk' },
                     ].map((s, i) => (
@@ -146,7 +157,7 @@ function BrandTile({ n, size = 'md' }) {
             {/* White pill background — logos always visible regardless of color */}
             <div className="bm-tile-bg">
                 <img
-                    src={`/${n}.webp`}
+                    src={`/Brand/${n}.webp`}
                     alt={`Brand ${n}`}
                     className="bm-logo"
                     loading="lazy"

@@ -44,10 +44,10 @@ const pillars = [
 ];
 
 const storyBadges = [
-    { icon: '🏅', label: '20+ Years Experience' },
-    { icon: '📦', label: '40+ Essential Products' },
+    { icon: '🏅', label: '25+ Years Experience' },
+    { icon: '📦', label: '50+ Essential Products' },
     { icon: '🌍', label: 'Pan-India Network' },
-    { icon: '🤝', label: '500+ Active Partners' },
+    { icon: '🤝', label: '87+ Active Partners' },
 ];
 
 export default function About() {
@@ -134,7 +134,7 @@ export default function About() {
                         {/* Big number visual */}
                         <div className="story-big-card">
                             <div className="story-number-wrap">
-                                <span className="story-big-num">20</span>
+                                <span className="story-big-num">25</span>
                                 <div className="story-num-meta">
                                     <span className="story-plus">+</span>
                                     <span className="story-years-label">Years<br />of Trust</span>
@@ -147,7 +147,7 @@ export default function About() {
                                     <span className="story-mini-label">Established</span>
                                 </div>
                                 <div className="story-mini">
-                                    <span className="story-mini-val">500+</span>
+                                    <span className="story-mini-val">87+</span>
                                     <span className="story-mini-label">Partners</span>
                                 </div>
                                 <div className="story-mini">

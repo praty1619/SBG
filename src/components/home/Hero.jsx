@@ -16,9 +16,9 @@ const item = {
 };
 
 const stats = [
-    { value: '20+', label: 'Years' },
-    { value: '500+', label: 'Partners' },
-    { value: '40+', label: 'Products' },
+    { value: '25+', label: 'Years' },
+    { value: '87+', label: 'Partners' },
+    { value: '50+', label: 'Products' },
     { value: '24/7', label: 'Support' },
 ];
 
@@ -155,7 +155,7 @@ export default function Hero() {
                             </div>
 
                             <div className="card-headline">
-                                ₹5L – ₹15L
+                                ₹5L – ₹25L
                                 <span className="card-headline-sub">Potential / Month</span>
                             </div>
 
@@ -190,7 +190,7 @@ export default function Hero() {
                                         <div key={i} className="card-avatar" style={{ background: `hsl(${20 + i * 35},70%,50%)` }}>{l}</div>
                                     ))}
                                 </div>
-                                <span className="card-footer-text">500+ partners growing</span>
+                                <span className="card-footer-text">87+ partners growing</span>
                             </div>
                         </div>
 
@@ -208,7 +208,7 @@ export default function Hero() {
                             animate={{ y: [0, 10, 0] }}
                             transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
                         >
-                            40+ Products
+                            50+ Products
                         </motion.div>
 
                         <motion.div
