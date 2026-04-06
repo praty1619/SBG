@@ -17,7 +17,23 @@ export default function Contact() {
 
   const submit = e => {
     e.preventDefault();
-    // Replace with real API call
+
+    // 1. Format the data into a readable WhatsApp message using template literals
+    const whatsappText = `*New Franchise Enquiry!*\n\n*Name:* ${form.name}\n*Phone:* ${form.phone}\n*City:* ${form.city || 'Not provided'}\n*Message:* ${form.message || 'No message'}`;
+
+    // 2. Encode the text so it can safely be put into a URL (handles spaces and line breaks)
+    const encodedText = encodeURIComponent(whatsappText);
+
+    // 3. Your target WhatsApp number (without the +)
+    const phoneNumber = "916201739296";
+
+    // 4. Create the final WhatsApp wa.me link
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+
+    // 5. Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+
+    // 6. Still show the success message on your website
     setSent(true);
   };
 
@@ -52,7 +68,7 @@ export default function Contact() {
               <span className="contact-info-icon">📞</span>
               <div>
                 <p className="contact-info-label">Call Us</p>
-                <p className="contact-info-value">+91 98765 43210</p>
+                <p className="contact-info-value">+91 6201739296</p>
               </div>
             </div>
             <div className="contact-info-item">
@@ -73,7 +89,7 @@ export default function Contact() {
 
           {/* WhatsApp CTA */}
           <a
-            href="https://wa.me/919876543210"
+            href="https://wa.me/916201739296"
             target="_blank"
             rel="noopener noreferrer"
             className="whatsapp-btn"

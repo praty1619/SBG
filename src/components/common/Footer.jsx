@@ -69,7 +69,7 @@ export default function Footer() {
                         <div className="footer-contact-list">
                             <div className="footer-contact-item">
                                 <span>📞</span>
-                                <span>+91 98765 43210</span>
+                                <span>+91 62017 39296</span>
                             </div>
                             <div className="footer-contact-item">
                                 <span>📧</span>

@@ -64,7 +64,7 @@ const categories = [
             { src: '/showcase/kitchen-1.png', span: 'lg', label: 'Mixer Grinders' },
             { src: '/showcase/kitchen-2.png', span: 'md', label: 'Gas Stoves' },
             { src: '/showcase/kitchen-3.png', span: 'sm', label: 'Induction Cook' },
-            { src: '/showcase/kitchen-4.png', span: 'sm', label: 'Milton Wares' },
+            { src: '/showcase/kitchen-4.png', span: 'sm', label: 'Milton wares' },
         ],
     },
     {
@@ -263,6 +263,31 @@ export default function ProductShowcase() {
                                 ))}
                             </motion.div>
                         </AnimatePresence>
+
+                        {/* CTA — mobile only, desktop uses sidebar version */}
+                        <motion.div
+                            className="mobile-cta"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.55, ease: [0.4, 0, 0.2, 1] }}
+                            viewport={{ once: true, amount: 0.5 }}
+                        >
+                            <div className="mobile-cta-left">
+                                <span className="mobile-cta-icon">📋</span>
+                                <div>
+                                    <p className="mobile-cta-title">Want the full catalogue?</p>
+                                    <p className="mobile-cta-sub">Get our complete product list with pricing.</p>
+                                </div>
+                            </div>
+                            <a href="#contact" className="mobile-cta-btn">
+                                Request Catalogue
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" strokeWidth="2.5"
+                                    strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </motion.div>
 
                     </div>
                 </motion.div>
