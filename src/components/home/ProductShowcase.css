@@ -467,14 +467,33 @@
         grid-template-columns: 1fr;
     }
 
+    /* Horizontal scrolling pill tabs */
     .showcase-sidebar {
         position: relative;
         top: 0;
-        /* Horizontal scrolling tab row on tablet */
         flex-direction: row;
         overflow-x: auto;
-        gap: 6px;
-        padding-bottom: 0.5rem;
+        overflow-y: visible;
+        gap: 8px;
+        padding-bottom: 10px;
+        scrollbar-width: thin;
+        scrollbar-color: #E8841A rgba(255, 255, 255, 0.05);
+    }
+
+    .showcase-sidebar::-webkit-scrollbar {
+        display: block;
+        height: 3px;
+    }
+
+    .showcase-sidebar::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 999px;
+    }
+
+    .showcase-sidebar::-webkit-scrollbar-thumb {
+        background: #E8841A;
+        border-radius: 999px;
+        box-shadow: 0 0 6px rgba(232, 132, 26, 0.6);
     }
 
     .sidebar-eyebrow {
@@ -485,19 +504,27 @@
         display: none;
     }
 
+    /* Each tab becomes a pill */
     .sidebar-tab {
         flex-shrink: 0;
-        padding: 10px 16px;
+        flex-direction: row;
+        align-items: center;
+        gap: 7px;
+        padding: 9px 16px;
         border-radius: 999px;
         border: 1px solid rgba(255, 255, 255, 0.09);
         background: rgba(255, 255, 255, 0.04);
+        white-space: nowrap;
+        /* reset desktop hover transform */
+        transform: none !important;
     }
 
     .sidebar-tab--active {
-        background: rgba(232, 132, 26, 0.12) !important;
-        border-color: rgba(232, 132, 26, 0.3) !important;
+        background: rgba(232, 132, 26, 0.1) !important;
+        border-color: rgba(232, 132, 26, 0.35) !important;
     }
 
+    /* Hide desktop-only elements inside each tab */
     .tab-bar {
         display: none;
     }
@@ -506,32 +533,45 @@
         display: none;
     }
 
-    .tab-text {
+    .tab-count {
         display: none;
     }
 
+    /* Show icon + label side by side */
     .tab-icon {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        flex-shrink: 0;
+        /* don't scale on mobile */
+        transform: none !important;
     }
 
-    /* Show label inline on mobile tab */
-    .sidebar-tab::after {
-        content: attr(data-label);
+    /* Keep tab-text visible but just show label */
+    .tab-text {
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .tab-label {
         font-family: 'DM Sans', sans-serif;
-        font-size: 0.8rem;
+        font-size: 0.82rem;
         font-weight: 600;
         color: #8A9BBF;
+        display: block;
     }
 
-    .sidebar-tab--active::after {
+    .sidebar-tab--active .tab-label {
         color: #E8841A;
     }
 
+    /* Category header stacks on mobile */
     .showcase-cat-header {
         flex-direction: column;
         align-items: flex-start;
+        gap: 0.4rem;
     }
 
+    /* Grid becomes 2-col on tablet/mobile */
     .showcase-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 160px 160px 160px;
